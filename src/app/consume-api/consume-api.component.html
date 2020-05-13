@@ -1,0 +1,57 @@
+ <!-- <div class="weather-banner">
+  <div  class="alert alert-dark" role="alert">
+    <div class="alert alert-success" role="alert">
+      <h4 class="alert-heading">Well done!</h4>
+      <p>Aww yeah, to start using the application please you must enter the name of the city and the code of the country where you want to know the weather. for example:</p>
+      <p class="mb-0"> city name: "medellin"</p>
+      <p>code country: "co" </p>
+    </div>
+  </div>
+
+  <h3>Test the application</h3>
+  <ng-template appWeather></ng-template>  
+</div>-->
+
+
+<div class="cointainer p-4">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="card card-body bg-dark">
+        <img  width="200" src="https://openweathermap.org/themes/openweathermap/assets/img/openweather-negative-logo-RGB.png" alt="openweather-negative-logo-RGB" class="card-img-top" >
+        <Form (submit)="submitLocation (cityName, countryCode)">
+          <div class="form-group">
+          <input type="text" class="form-control"  placeholder="City Name" #cityName required>
+          </div>
+          <div class="form-group">
+          <input type="text" class="form-control"  placeholder="Country Code" #countryCode required>
+          </div>
+          <button (click)="$1" type="submit" class="btn btn-info btn-block mt-2" >Get Weather</button>
+        </Form>
+      </div>
+    </div>
+    <div *ngIf="weather" class=" info col-md-6">
+      <div  class="card card-body bg-dark">
+        <p class="text-white"><strong>Your City is</strong>: {{weather.name}}</p>
+        <p class="text-white"><strong>Temperature</strong>: {{weather.main.temp}} °C</p>
+        <p class="text-white"><strong>Latitude</strong>: {{weather.coord.lat}}</p>
+        <p class="text-white"><strong>Longitude</strong>: {{weather.coord.lon}}</p>
+        <p class="text-white"><strong>Humidity</strong>: {{weather.main.humidity}} %</p>
+        <p class="text-white"><Strong>Pressure</Strong>: {{weather.main.pressure}} hPa</p>
+
+        <p *ngIf="weather.main.temp < 20" class="text-white">Your weather is cold-weather
+        <button routerLink="/cold-weather" (click)="$1" type="submit" class="btn btn-info btn-block mt-2" >Cold Weather Tips</button></p>
+
+        <p *ngIf="weather.main.temp > 20" class="text-white">Your weather is Hot weather
+        <button routerLink="/hot-weather" (click)="$1" type="submit" class="btn btn-info btn-block mt-2" >Hot Weather Tips</button></p>
+        
+        <!-- <app-cold-weather  
+          [temp]="tempWeather">
+        </app-cold-weather>-->
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+

@@ -1,0 +1,23 @@
+
+<nav class="navbar navbar-dark bg-dark">
+  <a class="navbar-brand" routerLink="" >HOME</a>
+  <hello class="text-muted" class="text-center" class="text-decoration-none" name="{{ name }}"></hello> 
+</nav>
+
+
+<div>
+  <div>
+    <app-weather-banner [ads]="ads"></app-weather-banner>
+  </div>
+  <router-outlet></router-outlet>
+</div>
+
+<!-- 
+  routerlink active show us visually which link is active in the page 
+
+
+<div class="container" mt-3>
+  <app-consume-api></app-consume-api>
+  
+
+</div>-->
